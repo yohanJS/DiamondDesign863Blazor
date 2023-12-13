@@ -1,0 +1,41 @@
+﻿@page "/users"
+
+@inject ApplicationDbContext DbContext
+@attribute [StreamRendering]
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 bg-dark text-white p-3 rounded-2 shadow-lg">
+            <h3>This Component gets all the user from the Db</h3>
+
+            <ul>
+                @if (Users != null)
+                {
+                    @foreach (var item in Users)
+                    {
+                        <li>@item.JobTitle @item.FirstName @item.LastName</li>
+                    }
+                }
+                else
+                {
+                    <p>Loading users.....</p>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<UserPrimaryInfo>? Users;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate asynchronous loading to demonstrate streaming rendering
+        await Task.Delay(500);
+
+        if (DbContext.UserPrimaryInfo != null)
+        {
+            Users = DbContext.UserPrimaryInfo.ToList();
+        }
+    }
+}
