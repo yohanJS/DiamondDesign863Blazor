@@ -2,12 +2,80 @@
 
 <PageTitle>Home</PageTitle>
 
-@*First Component*@
-<div class="container">
+@* <div class="container">
     <div class="row">
         <div class="col-12 text-center fw-bold mb-4">
             <p class="display-6">This Home Page is made up different components.</p>
         </div>
     </div>
 </div>
-<GetAllUsersInfo></GetAllUsersInfo>
+
+
+@*Components*@
+@* <GetAllUsersInfo></GetAllUsersInfo>
+<Weather></Weather>  *@
+
+<div class="text-center">
+    <img class="img-fluid" src="./Images/Header.png" />
+</div>
+
+
+<section class="custom-bg">
+    <div class="row text-center">
+        <div class="col-12 mb-4 mt-4">
+            <h1 class="h1text mt-5">WHAT WE OFFER</h1>
+        </div>
+        <div class="secondStatement col-12 col-md-6 m-auto">"Explore limitless possibilities with our bespoke Bikes & Polaris designs, offering unrivaled customization, expert craftsmanship, and a commitment to elevating your off-road experience."</div>
+    </div>
+
+    <div class="row text-center p-3">
+        <div class="col-12 mt-5 mb-5">
+            <h1 class="h1text">COLLECTIONS</h1>
+        </div>
+        <div class="col-12">
+            <a class="btn index-btn p-3 mt-3" asp-area="" asp-controller="Audio" asp-action="AudioHomePage">AUDIO</a>
+            <a class="btn index-btn p-3 mt-3" href="#" role="button">LIGHTS</a>
+            <a class="btn index-btn p-3 mt-3" href="#" role="button">BODY PARTS</a>
+            <a class="btn index-btn p-3 mt-3" href="#" role="button">ACCESSORIES</a>
+            <a class="btn index-btn p-3 mt-3" href="#" role="button">MERCHANDISE</a>
+        </div>
+    </div>
+
+    <div class="container mb-4 mt-5">
+        <div class="row gy-4 justify-content-center">
+            <div class="col-12 mt-5 mb-5 text-center">
+                <h1 class="h1text">CUSTOM JOBS GALERY</h1>
+            </div>
+            <div class="col-md-6 col-12">
+                <img src="https://i.imgur.com/cZlhm8s.jpg" class="img-thumbnail shadow-lg" alt="Polaris Sligshot leds light at night">
+            </div>
+            <div class="col-md-4 col-12">
+                <img src="https://i.imgur.com/ntN7Na0.jpg" class="img-thumbnail shadow-lg" alt="Polaris Sligshot leds light at night">
+            </div>
+            <div class="col-md-4 col-12">
+                <img src="https://i.imgur.com/aTSaIdI.png" class="img-thumbnail shadow-lg" alt="Polaris Sligshot leds light at night">
+            </div>
+            <div class="col-md-6 col-12">
+                <img src="https://i.imgur.com/H3JxQTc.jpg" class="img-thumbnail shadow-lg" alt="Polaris Sligshot leds light at night">
+            </div>
+            <div class="col-md-6 col-12">
+                <img src="https://i.imgur.com/4tVEKdd.jpg" class="img-thumbnail shadow-lg" alt="Polaris Sligshot leds light at night">
+            </div>
+            <div class="col-md-4 col-12">
+                <img src="https://i.imgur.com/J9RWyNE.jpg" class="img-thumbnail shadow-lg" alt="Polaris Sligshot leds light at night">
+            </div>
+        </div>
+    </div>
+
+    <div class="position-relative text-center">
+        <img class="img-fluid" src="/Images/Footer.png" style="z-index: 1;" />
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <h1 class="text-center footer-text display-6">"GET IN TOUCH <br> TODAY"</h1>
+        </div>
+    </div>
+</section>
+
+
+@code {
+    
+}

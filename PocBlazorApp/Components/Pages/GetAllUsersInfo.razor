@@ -9,7 +9,7 @@
             <h3>This Component gets all the user from the Db</h3>
 
             <ul>
-                @if (Users != null)
+                @if (Users != null && Users.Any())
                 {
                     @foreach (var item in Users)
                     {
@@ -31,7 +31,7 @@
     protected override async Task OnInitializedAsync()
     {
         // Simulate asynchronous loading to demonstrate streaming rendering
-        await Task.Delay(500);
+        await Task.Delay(8000);
 
         if (DbContext.UserPrimaryInfo != null)
         {

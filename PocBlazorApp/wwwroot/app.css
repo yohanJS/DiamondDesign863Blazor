@@ -49,3 +49,46 @@ h1:focus {
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
 }
+
+.custom-header-color {
+    background: hsla(223, 59%, 13%, 1);
+    background: radial-gradient(circle, hsla(223, 59%, 13%, 1) 0%, hsla(219, 57%, 14%, 1) 60%);
+    background: -moz-radial-gradient(circle, hsla(223, 59%, 13%, 1) 0%, hsla(219, 57%, 14%, 1) 60%);
+    background: -webkit-radial-gradient(circle, hsla(223, 59%, 13%, 1) 0%, hsla(219, 57%, 14%, 1) 60%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0D1833", endColorstr="#0F1D37", GradientType=1 );
+}
+
+.custom-bg {
+    background-color: #7D8F98;
+}
+
+.h2text {
+    color: black;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.h1text {
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -2px;
+}
+
+.collections {
+    color: black;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.index-btn {
+    background-color: #0C2131;
+    color: white;
+    width: 10rem;
+    margin: 0.7rem;
+}
+
+.footer-text {
+    font-weight: 900;
+    font-style: italic;
+    color: #F9EF23;
+}
