@@ -6,5 +6,6 @@ namespace PocBlazorApp.Services
     public interface IAmplifierService
     {
        Task<List<AmplifierModel>> GetAmplifiersAsync();
+        Task<AmplifierModel> CreateAmplifierAsync(AmplifierModel amplifier);
     }
 }

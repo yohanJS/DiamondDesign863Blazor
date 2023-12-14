@@ -1,0 +1,46 @@
+﻿@page "/edit-amplifier"
+@page "/edit-amplifier/{id:int}"
+
+@inject IAmplifierService AmplifierService
+
+<h3>Edit Amplifier</h3>
+
+<EditForm Model="amplifier" OnSubmit="HandleSubmit" FormName="EditAmplifier">
+    <div class="form-group">
+        <label>Model</label>
+        <InputText @bind-Value="amplifier.ModelName" class="form-control"></InputText>
+        <ValidationMessage For="@(() => amplifier.ModelName)" />
+    </div>
+
+    <div class="form-group">
+        <label>Ohms</label>
+        <InputNumber @bind-Value="amplifier.Ohms" class="form-control"></InputNumber>
+    </div>
+
+    <div class="form-group">
+        <label>Frequency Response</label>
+        <InputText @bind-Value="amplifier.FrequencyResponse" class="form-control"></InputText>
+    </div>
+
+    <!-- Add other input fields for the remaining properties -->
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</EditForm>
+
+@code {
+
+    [Parameter]
+    public int? Id { get; set; }
+    [SupplyParameterFromForm]
+    AmplifierModel amplifier { get; set; } = new AmplifierModel();
+
+    async Task HandleSubmit()
+    {
+        // Add logic to save the changes to the database or perform other actions
+        // For example, you can use the DatabaseContext to update the existing record or add a new one
+        // dbContext.AmplifierModels.Update(amplifier); // for update
+        // dbContext.AmplifierModels.Add(amplifier); // for insert
+        // await dbContext.SaveChangesAsync();
+        await AmplifierService.CreateAmplifierAsync(amplifier);
+    }
+}

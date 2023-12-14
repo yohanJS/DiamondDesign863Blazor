@@ -1,0 +1,13 @@
+﻿@page "/add-amplifier"
+@inject NavigationManager NavigationManager
+
+<button @onclick="CreateAmplifier" class="btn btn-primary">Add Amplifier</button>
+
+
+@code {
+
+    void CreateAmplifier()
+    {
+        NavigationManager.NavigateTo("/edit-amplifier");
+    }
+}

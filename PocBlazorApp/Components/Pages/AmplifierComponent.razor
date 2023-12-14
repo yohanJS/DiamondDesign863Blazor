@@ -1,39 +1,43 @@
 ﻿@page "/audio"
 @inject IAmplifierService AmplifierService
+@inject NavigationManager NavigationManager
+@attribute [StreamRendering(true)]
+@rendermode InteractiveServer
 
 
 <h3>Amplifiers List</h3>
 
 
-@if (amplifiers != null)
-{
-    if (!amplifiers.Any())
-    {
-        <p>No Audio yet</p>
-    }
-    else
-    {
-        <ul>
-            @foreach (var item in amplifiers)
-            {
-                <li>@item.ModelName</li>
-            }
-        </ul>
-    }
-}
-else 
+@if (amplifiers == null)
 {
     <p>Loading....</p>
 }
+else if (!amplifiers.Any())
+{
+    <p>No Audio in Table</p>
+}
+else 
+{
+    <ul>
+        @foreach (var item in amplifiers)
+        {
+            <li>@item.ModelName</li>
+        }
+    </ul>
+}
+<button @onclick="CreateAmplifier" class="btn btn-primary">Add Amplifier</button>
 
 @code {
 
-    List<AmplifierModel> amplifiers = new List<AmplifierModel>();
+    List<AmplifierModel> amplifiers = null;
 
     protected override async Task OnInitializedAsync()
     {
-
         amplifiers = await AmplifierService.GetAmplifiersAsync();
+    }
 
+    void CreateAmplifier()
+    {
+        NavigationManager.NavigateTo("/edit-amplifier");
     }
 }

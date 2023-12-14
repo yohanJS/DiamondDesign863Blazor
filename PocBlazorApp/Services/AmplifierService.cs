@@ -13,9 +13,19 @@ namespace PocBlazorApp.Services
             _context = context;
         }
 
-        public Task<List<AmplifierModel>> GetAmplifiersAsync()
+        public async Task<AmplifierModel> CreateAmplifierAsync(AmplifierModel amplifier)
         {
-            var amplifiers = _context.AmplifierModel.ToListAsync();
+            _context.AmplifierModel.Add(amplifier);
+            await _context.SaveChangesAsync();
+
+            return amplifier;
+        }
+
+        public async Task<List<AmplifierModel>> GetAmplifiersAsync()
+        {
+            // Simulate asynchronous loading to demonstrate streaming rendering
+            await Task.Delay(500);
+            var amplifiers = _context.AmplifierModel.ToList();
             return amplifiers;
         }
     }
