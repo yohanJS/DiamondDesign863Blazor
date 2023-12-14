@@ -5,6 +5,7 @@ using PocBlazorApp.Client.Pages;
 using PocBlazorApp.Components;
 using PocBlazorApp.Components.Account;
 using PocBlazorApp.Data;
+using PocBlazorApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +37,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+builder.Services.AddScoped<IAmplifierService, AmplifierService>();
 
 var app = builder.Build();
 

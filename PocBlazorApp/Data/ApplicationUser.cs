@@ -7,6 +7,7 @@ namespace PocBlazorApp.Data
     public class ApplicationUser : IdentityUser
     {
         public ICollection<UserPrimaryInfo>? userPrimaryInfo { get; set; }
+        public ICollection<AmplifierModel>? AmplifierModel { get; set; }
     }
 
 }

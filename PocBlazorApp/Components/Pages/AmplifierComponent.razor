@@ -1,0 +1,39 @@
+﻿@page "/audio"
+@inject IAmplifierService AmplifierService
+
+
+<h3>Amplifiers List</h3>
+
+
+@if (amplifiers != null)
+{
+    if (!amplifiers.Any())
+    {
+        <p>No Audio yet</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var item in amplifiers)
+            {
+                <li>@item.ModelName</li>
+            }
+        </ul>
+    }
+}
+else 
+{
+    <p>Loading....</p>
+}
+
+@code {
+
+    List<AmplifierModel> amplifiers = new List<AmplifierModel>();
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        amplifiers = await AmplifierService.GetAmplifiersAsync();
+
+    }
+}
